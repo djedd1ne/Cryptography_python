@@ -10,7 +10,7 @@ key = Fernet.generate_key()
 cipher = Fernet(key)
 
 #The message we want to encrypt
-message = "This is a secret message".encode()
+message = input("Message to encrypt: ").encode()
 print("Original message: ", message.decode())
 
 #Encrypt the message
