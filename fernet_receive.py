@@ -1,7 +1,7 @@
 # Import cryptogaphy library
 import cryptography
 
-# Use a symmetric encryption method
+# Use a symmetric encryption method Fernet
 from cryptography.fernet import Fernet
 
 # Load the key
