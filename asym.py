@@ -28,3 +28,6 @@ encrypted_message = public_key.encrypt(
         label=None
     )
 )
+
+#Show secret message
+print(encrypted_message)
