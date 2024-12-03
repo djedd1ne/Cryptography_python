@@ -15,3 +15,16 @@ private_key = rsa.generate_private_key(
 
 # Generate public key
 public_key = private_key.public_key()
+
+# Encrypting the message with the public key
+message = "I have a surprise for you".encode()
+
+# Make secret message
+encrypted_message = public_key.encrypt(
+    message,
+    cryptography.hazmat.primitives.asymmetric.padding.OAEP(
+        mgf=cryptography.hazmat.primitives.asymmetric.padding.MGF1(algorithm=cryptography.hazmat.primitives.hashes.SHA256()),
+        algorithm=cryptography.hazmat.primitives.hashes.SHA256(),
+        label=None
+    )
+)
