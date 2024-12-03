@@ -9,6 +9,10 @@ key = Fernet.generate_key()
 #Create a Fernet object
 cipher = Fernet(key)
 
+#Store the key
+with open("secret.key", "wb") as key_file:
+  key_file.write(key)
+
 #The message we want to encrypt
 message = input("Message to encrypt: ").encode()
 print("Original message: ", message.decode())
