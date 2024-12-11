@@ -31,3 +31,15 @@ encrypted_message = public_key.encrypt(
 
 #Show secret message
 print(encrypted_message)
+
+#Decrypting the message with the private key
+decrypted_message = private_key.decrypt(
+    encrypted_message,
+    cryptography.hazmat.primitives.asymmetric.padding.OAEP(
+        mgf=cryptography.hazmat.primitives.asymmetric.padding.MGF1(algorithm=cryptography.hazmat.primitives.hashes.SHA256()),
+        algorithm=cryptography.hazmat.primitives.hashes.SHA256(),
+        label=None
+    )
+).decode()
+
+print(decrypted_message)
